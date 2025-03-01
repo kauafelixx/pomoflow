@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=lists"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=avg_pace" />
+    <title>PomoFlow</title>
+  </head>
+  <body>
+    <header>
+
+      <div class="menu-header">
+        <span class="material-symbols-rounded Symbols"> lists </span>
+      </div>
+
+     
+            <h1>
+                PomoFlow
+                <span class="material-symbols-outlined Symbols">
+                    avg_pace
+                    </span>
+             </h1>
+    </header>
+<div class="container-timer">
+    
+        <div class="timer-container">
+            <div class="circle-container">
+              <div class="circle"></div> <!-- Círculo animado -->
+           
+              <div id="timer">25:00 </div> 
+              <!-- Timer -->
+            </div>
+            <div class="controls">
+              <button id="start">Iniciar</button>
+              <button id="pause" class="hidden">Pausar</button>
+              <button id="stop" class="hidden">Parar</button>
+            </div>
+          </div>
+</div>
+      <script src="script.js"></script>
+  </body>
+</html>
