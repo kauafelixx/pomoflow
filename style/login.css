@@ -1,0 +1,95 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+:root {
+  --font1: "Pacifico", cursive;
+  --font2: "Russo One", serif;
+  --color-primary: #060e26; /* Azul muito escuro */
+  --color-secondary: #0b1c40; /* Azul escuro */
+  --color-accent: #163e73; /* Azul médio */
+  --color-light: #2e84a6; /* Azul claro */
+  --color-extra-light: #69b7bf; /* Azul muito claro */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font2);
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-primary),
+    var(--color-secondary),
+    var(--color-extra-light),
+    var(--color-light)
+  );
+}
+/* Estilos para a página de login */
+.login-container {
+  max-width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-container h1 {
+  color: var(--color-primary);
+  margin-bottom: 20px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: var(--color-light);
+}
+
+.login-container p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.login-container a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para o checkbox "Lembrar de mim" */
+label {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 0.8rem;
+  padding: 10px;
+  color: var(--color-primary);
+}
+
+#remember-me {
+  margin-right: 10px;
+}

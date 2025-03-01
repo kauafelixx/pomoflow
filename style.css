@@ -1,156 +1,195 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
-:root{
-    --font1:'Pacifico', cursive;
---font2:  "Russo One", serif;
---color-primary: #060E26; /* Azul muito escuro */
---color-secondary: #0B1C40; /* Azul escuro */
---color-accent: #163E73; /* Azul médio */
---color-light: #2E84A6; /* Azul claro */
---color-extra-light: #69B7BF; /* Azul muito claro */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+:root {
+  --font1: "Pacifico", cursive;
+  --font2: "Russo One", serif;
+  --color-primary: #060e26; /* Azul muito escuro */
+  --color-secondary: #0b1c40; /* Azul escuro */
+  --color-accent: #163e73; /* Azul médio */
+  --color-light: #2e84a6; /* Azul claro */
+  --color-extra-light: #69b7bf; /* Azul muito claro */
 }
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    height: 100vh;
-    width: 100vw;
-    overflow-x:hidden ;
-    font-family: var(--font1);
-  background-image: linear-gradient(to bottom, var(--color-primary), var(--color-secondary), var(--color-extra-light), var(--color-light));
-
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font2);
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-primary),
+    var(--color-secondary),
+    var(--color-extra-light),
+    var(--color-light)
+  );
 }
-header{
-    background-color: white;
-    display: flex;
-    flex-direction: row;
+header {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.127);
-    align-items: center;
+  align-items: center;
 }
 
-h1{ 
-    margin:auto;
-padding: 10px;
-color: var(--color-primary);
-    .material-symbols-outlined{
-        font-size: 1em;
-        filter: drop-shadow(1px 1px 1px var(--co2));
-    }
+h1 {
+  margin: auto;
+  padding: 10px;
+  color: var(--color-primary);
+  .material-symbols-outlined {
+    font-size: 1em;
+    filter: drop-shadow(1px 1px 1px var(--co2));
+  }
 }
 
-.menu-header{
-padding: 10px;
+.menu-header {
+  padding: 10px;
 
-.material-symbols-rounded{
+  .material-symbols-rounded {
     font-size: 2em;
-    
+  }
 }
-}
-.Symbols{
-    color: var(--color-primary);    
+.Symbols {
+  color: var(--color-primary);
 }
 
-.container-timer{
-    background-color: white;
-    width: 400px;
-    margin:25px auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 8px #33333336;
+.container-timer {
+  background-color: white;
+  width: 400px;
+  margin: 25px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px #33333336;
 }
 
 /* Container do Timer */
 .timer-container {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  /* Contêiner para o círculo e o timer */
-  .circle-container {
-    position: relative;
-    width: 200px; /* Tamanho do contêiner */
-    height: 200px;
-    margin: 0 auto; /* Centraliza o contêiner */
-  }
-  
-  /* Círculo animado */
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Contêiner para o círculo e o timer */
+.circle-container {
+  position: relative;
+  width: 200px; /* Tamanho do contêiner */
+  height: 200px;
+  margin: 0 auto; /* Centraliza o contêiner */
+}
+
+/* Círculo animado */
 /* Círculo animado */
 /* Círculo animado */
 .circle {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%; /* Formato circular */
-    background: conic-gradient(
-      var(--color-accent), /* Cor inicial do gradiente */
-      rgba(22, 62, 115, 0.1) 90%, /* Tom quase transparente no meio */
-      var(--color-accent) /* Cor final do gradiente */
-    );
-    position: absolute;
-    top: 0;
-    left: 0;
-    animation: rotateCircle 3s linear infinite; /* Animação de rotação (3s) */
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* Formato circular */
+  background: conic-gradient(
+    var(--color-accent),
+    /* Cor inicial do gradiente */ rgba(22, 62, 115, 0.1) 90%,
+    /* Tom quase transparente no meio */ var(--color-accent)
+      /* Cor final do gradiente */
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: rotateCircle 3s linear infinite; /* Animação de rotação (3s) */
+}
+
+/* Efeito de borda interna */
+.circle::before {
+  content: "";
+  position: absolute;
+  width: 80%; /* Ajuste este valor para controlar a grossura da linha */
+  height: 80%;
+  border-radius: 50%;
+  background: #fff; /* Fundo branco para o "buraco" do círculo */
+  top: 10%; /* Centraliza o círculo interno */
+  left: 10%;
+}
+
+/* Display do Timer */
+#timer {
+  font-size: 2.5rem;
+  font-family: var(--font2);
+  color: var(--color-primary); /* Cor do texto do timer */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza o timer */
+  z-index: 1; /* Garante que o timer fique acima do círculo */
+}
+
+/* Animação de rotação do círculo */
+@keyframes rotateCircle {
+  from {
+    transform: rotate(0deg);
   }
-  
-  /* Efeito de borda interna */
-  .circle::before {
-    content: '';
-    position: absolute;
-    width: 80%; /* Ajuste este valor para controlar a grossura da linha */
-    height: 80%;
-    border-radius: 50%;
-    background: #fff; /* Fundo branco para o "buraco" do círculo */
-    top: 10%; /* Centraliza o círculo interno */
-    left: 10%;
+  to {
+    transform: rotate(360deg);
   }
-  
-  /* Display do Timer */
-  #timer {
-    font-size: 2.5rem;
-    font-family: var(--font2);
-    color: var(--color-primary); /* Cor do texto do timer */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centraliza o timer */
-    z-index: 1; /* Garante que o timer fique acima do círculo */
-  }
-  
-  /* Animação de rotação do círculo */
-  @keyframes rotateCircle {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  /* Botões de Controle */
-  .controls button {
-    padding: 9px 20px;
-    margin: 15px auto;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 100;
-    font-size: 1rem;
-    color: var(--color-primary);
-    background-color: var(--color-extra-light); /* Cor de fundo dos botões */
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    box-shadow: inset 2px 2px 6px var(--color-primary), 2px 2px 6px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
-  }
-  
-  
-  
-  .controls button:active {
-    background-color: white; /* Cor ao clicar */
-  }
-  
-  /* Classe para esconder botões */
-  .hidden {
-    display: none;
-  }
+}
+
+/* Botões de Controle */
+.controls button {
+  padding: 7px 20px;
+  margin: 15px auto;
+  font-family: var(--font2);
+  font-weight: 100;
+  font-size: 1rem;
+  color: var(--color-extra-light);
+  background-color: var(--color-primary); /* Cor de fundo dos botões */
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 2px 2px 6px #060e268a;
+  transition: background-color 0.3s ease;
+}
+
+.controls button:active {
+  background-color: white; /* Cor ao clicar */
+}
+
+/* Classe para esconder botões */
+.hidden {
+  display: none;
+}
+
+/* Mensagem de notificação */
+#message {
+  font-family: Arial, Helvetica, sans-serif;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-accent);
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+}
+
+#message.hidden {
+  display: none;
+}
+
+#close-message {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 10px;
+}
+
+#close-message:hover {
+  color: var(--color-light);
+}
