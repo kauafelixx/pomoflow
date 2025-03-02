@@ -11,22 +11,21 @@
   --color-extra-light: #69b7bf; /* Azul muito claro */
 }
 * {
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+html{
+  background-color: white;
+}
 body {
-  height: 100vh;
+  height: 115vh;
   width: 100vw;
   overflow-x: hidden;
   font-family: var(--font2);
-  background-image: linear-gradient(
-    to bottom,
-    var(--color-primary),
-    var(--color-secondary),
-    var(--color-extra-light),
-    var(--color-light)
-  );
+background-color: #163e73;
 }
 header {
   background-color: white;
