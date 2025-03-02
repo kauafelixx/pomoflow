@@ -124,3 +124,43 @@ closeMessage.addEventListener("click", hideMessage);
 // Inicializa o timer
 timeLeft = 25 * 60; // Começa com 25 minutos de trabalho
 updateTimer();
+
+
+
+
+
+
+
+// Função para salvar o tempo estudado/trabalhado
+
+function saveStudyTime(minutes) {
+  const today = new Date().toLocaleDateString(); // Data atual
+  const studyData = JSON.parse(localStorage.getItem('studyData')) || {};
+
+  // Converte minutos para horas
+  const hours = (studyData[today] || 0) + (minutes / 60);
+
+  // Salva os dados no localStorage
+  studyData[today] = hours;
+  localStorage.setItem('studyData', JSON.stringify(studyData));
+}
+// Modifique a função toggleWorkRest para salvar o tempo estudado
+function toggleWorkRest() {
+  if (isWorkTime) {
+    // Terminou o tempo de trabalho, inicia o descanso
+    isWorkTime = false;
+    timeLeft = 5 * 60; // 5 minutos de descanso
+    showMessage('Tempo de trabalho concluído! Hora de descansar.');
+
+    // Salva o tempo estudado (25 minutos)
+    saveStudyTime(25);
+  } else {
+    // Terminou o tempo de descanso, inicia o trabalho
+    isWorkTime = true;
+    timeLeft = 25 * 60; // 25 minutos de trabalho
+    showMessage('Tempo de descanso concluído! Hora de trabalhar.');
+  }
+  // Reinicia o timer automaticamente
+  isPaused = true; // Reseta o estado de pausa
+  startTimer(); // Inicia o próximo ciclo
+}

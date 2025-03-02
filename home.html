@@ -13,6 +13,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=avg_pace"
     />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>PomoFlow</title>
   </head>
   <body>
@@ -47,6 +48,13 @@
       <p id="message-text"></p>
       <button id="close-message">&times;</button>
     </div>
-    <script src="script/timer.js"></script>
+
+    <section class="chart-section">
+      <h2>Tempo Estudado/Trabalhado (Últimos 7 Dias)</h2>
+      <canvas id="studyChart"></canvas>
+    </section>
+
+  
+    <script src="script/timer.js"></script>  <script src="script/chart.js"></script>
   </body>
 </html>

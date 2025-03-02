@@ -59,7 +59,8 @@ h1 {
 
 .container-timer {
   background-color: white;
-  width: 400px;
+  max-width: 800px;
+  width: 90%;
   margin: 25px auto;
   padding: 20px;
   border-radius: 10px;
@@ -192,4 +193,30 @@ h1 {
 
 #close-message:hover {
   color: var(--color-light);
+}
+
+
+/* Estilos para a seção do gráfico */
+.chart-section {
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px #33333336;
+  text-align: center;
+}
+
+.chart-section h2 {
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .9em;
+}
+
+#studyChart {
+  max-width: 100%;
+  margin: 0 auto;
+  height: 1000px;
 }
