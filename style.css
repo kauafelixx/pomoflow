@@ -5,10 +5,10 @@
   --font1: "Pacifico", cursive;
   --font2: "Russo One", serif;
   --color-primary: #060e26; /* Azul muito escuro */
-  --color-secondary: #0b1c40; /* Azul escuro */
-  --color-accent: #163e73; /* Azul médio */
-  --color-light: #2e84a6; /* Azul claro */
-  --color-extra-light: #69b7bf; /* Azul muito claro */
+  --color-secondary: #404153; /* Azul escuro */
+  --color-accent: #8930d1; /* Azul médio */
+  --color-light: #d986ff; /* Azul claro */
+  --color-extra-light: #8c00dd; /* Azul muito claro */
 }
 * {
 
@@ -25,7 +25,7 @@ body {
   width: 100vw;
   overflow-x: hidden;
   font-family: var(--font2);
-background-color: #163e73;
+background-color: var(--color-primary);
 }
 header {
   background-color: white;
@@ -57,19 +57,20 @@ h1 {
 }
 
 .container-timer {
-  background-color: white;
+  background-color: var(--color-secondary);
   max-width: 800px;
   width: 90%;
   margin: 25px auto;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 2px 2px 8px #33333336;
+  box-shadow:inset 2px 2px 8px var(--color-primary);
 }
 
 /* Container do Timer */
 .timer-container {
   text-align: center;
   margin-top: 20px;
+
 }
 
 /* Contêiner para o círculo e o timer */
@@ -78,10 +79,9 @@ h1 {
   width: 200px; /* Tamanho do contêiner */
   height: 200px;
   margin: 0 auto; /* Centraliza o contêiner */
+filter: drop-shadow(2px 2px 6px var(--color-primary));
 }
 
-/* Círculo animado */
-/* Círculo animado */
 /* Círculo animado */
 .circle {
   width: 100%;
@@ -145,7 +145,7 @@ h1 {
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  box-shadow: 2px 2px 6px #060e268a;
+  box-shadow: 2px 2px 6px #060e26;
   transition: background-color 0.3s ease;
 }
 
@@ -169,7 +169,7 @@ h1 {
   color: #fff;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px #060e26;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -201,9 +201,9 @@ h1 {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: white;
   border-radius: 10px;
-  box-shadow: 2px 2px 8px #33333336;
+  box-shadow: inset 2px 2px 8px #060e267a;
   text-align: center;
 }
 
@@ -215,6 +215,8 @@ h1 {
 }
 
 #studyChart {
+
+  
   max-width: 100%;
   margin: 0 auto;
   height: 1000px;

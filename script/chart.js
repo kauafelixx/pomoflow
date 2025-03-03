@@ -22,7 +22,7 @@ function getStudyData() {
 const ctx = document.getElementById("studyChart").getContext("2d");
 const gradient = ctx.createLinearGradient(0, 0, 0, 400);
 gradient.addColorStop(0, "rgba(22, 62, 115, 1)");
-gradient.addColorStop(1, "rgba(22, 62, 115, 0.2)");
+gradient.addColorStop(1, "rgba(32, 66, 110, 0.2)");
 
 const studyData = {
   labels: getStudyData().labels,
@@ -30,7 +30,7 @@ const studyData = {
     label: "Tempo Estudado/Trabalhado (horas)",
     data: getStudyData().data,
     backgroundColor: gradient,
-    borderColor: "rgba(22, 62, 115, 1)",
+    borderColor: "#060E26",
     borderWidth: {
       top: 2,    // Borda no topo
       right: 2,  // Borda à direita
@@ -68,7 +68,7 @@ const chartConfig = {
       y: {
         beginAtZero: true,
         grid: {
-          color: "rgba(0, 0, 0, 0.1)",
+          color: "#060E26",
         },
         ticks: {
           color: "#060E26",
