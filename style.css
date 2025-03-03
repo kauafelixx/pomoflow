@@ -60,6 +60,7 @@ h1 {
   background-color: var(--color-secondary);
   max-width: 800px;
   width: 90%;
+  height: 70%;
   margin: 25px auto;
   padding: 20px;
   border-radius: 10px;
@@ -76,8 +77,8 @@ h1 {
 /* Contêiner para o círculo e o timer */
 .circle-container {
   position: relative;
-  width: 200px; /* Tamanho do contêiner */
-  height: 200px;
+  width: 350px; /* Tamanho do contêiner */
+  height: 350px;
   margin: 0 auto; /* Centraliza o contêiner */
 filter: drop-shadow(2px 2px 6px var(--color-primary));
 }
@@ -113,7 +114,7 @@ filter: drop-shadow(2px 2px 6px var(--color-primary));
 
 /* Display do Timer */
 #timer {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-family: var(--font2);
   color: var(--color-primary); /* Cor do texto do timer */
   position: absolute;
@@ -135,8 +136,8 @@ filter: drop-shadow(2px 2px 6px var(--color-primary));
 
 /* Botões de Controle */
 .controls button {
-  padding: 7px 20px;
-  margin: 15px auto;
+  padding: 10px 25px;
+  margin: 20px auto;
   font-family: var(--font2);
   font-weight: 100;
   font-size: 1rem;
@@ -193,31 +194,83 @@ filter: drop-shadow(2px 2px 6px var(--color-primary));
 #close-message:hover {
   color: var(--color-light);
 }
-
-
-/* Estilos para a seção do gráfico */
-.chart-section {
-  width: 90%;
-  max-width: 800px;
-  margin: 20px auto;
+/* Estilos para o menu lateral */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #060e26;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.281);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
   padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: inset 2px 2px 8px #060e267a;
-  text-align: center;
+  color: var(--color-light);
 }
 
-.chart-section h2 {
-  color: var(--color-primary);
+.side-menu.hidden {
+  transform: translateX(-100%);
+}
+
+.side-menu:not(.hidden) {
+  transform: translateX(0);
+}
+
+.close-menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.close-menu:hover {
+  color: var(--color-extra-light);
+}
+
+.side-menu h2 {
+  font-size: 1.5rem;
   margin-bottom: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: .9em;
+  color: var(--color-extra-light);
 }
 
-#studyChart {
+.time-control {
+  margin-bottom: 20px;
+}
 
-  
-  max-width: 100%;
-  margin: 0 auto;
-  height: 1000px;
+.time-control p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.control-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.control-buttons button {
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.control-buttons button:hover {
+  background-color: var(--color-extra-light);
+}
+
+.control-buttons span {
+  font-size: 1.2rem;
+  color: var(--color-light);
 }

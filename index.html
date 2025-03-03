@@ -1,31 +1,107 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PomoFlow - Login</title>
-    <link rel="stylesheet" href="style/login.css" />
+    <link rel="stylesheet" href="style.css" />
     <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=avg_pace"
-  />
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>PomoFlow</title>
   </head>
   <body>
-    <div class="login-container">
+    <header>
+      <div class="menu-header">
+        <span class="material-symbols-rounded Symbols" id="menu-icon" onclick="toggleMenu()"> lists </span>
+      </div>
       <h1>
         PomoFlow
         <span class="material-symbols-outlined Symbols"> avg_pace </span>
       </h1>
-      <form id="login-form">
-        <input type="email" id="email" placeholder="Email" required />
-        <input type="password" id="password" placeholder="Senha" required />
-        <label>
-          <input type="checkbox" id="remember-me" /> Lembrar de mim
-        </label>
-        <button type="submit">Entrar</button>
-      </form>
-      <p>Não tem uma conta? <a href="register.html">Registre-se</a></p>
+    </header>
+
+    <!-- Menu Lateral -->
+    <div id="side-menu" class="side-menu hidden">
+      <button id="close-menu" class="close-menu" onclick="toggleMenu()">
+        &times;
+      </button>
+      <h2>Ajustar Tempos</h2>
+      <div class="time-control">
+        <p>Tempo de Trabalho (min):</p>
+        <div class="control-buttons">
+          <button id="decrease-work" onclick="adjustTime('work', -1)">-</button>
+          <span id="work-time">25</span>
+          <button id="increase-work" onclick="adjustTime('work', 1)">+</button>
+        </div>
+      </div>
+      <div class="time-control">
+        <p>Tempo de Descanso (min):</p>
+        <div class="control-buttons">
+          <button id="decrease-rest" onclick="adjustTime('rest', -1)">-</button>
+          <span id="rest-time">5</span>
+          <button id="increase-rest" onclick="adjustTime('rest', 1)">+</button>
+        </div>
+      </div>
     </div>
-    <script src="script/login.js"></script>
+
+    <div class="container-timer">
+      <div class="timer-container">
+        <div class="circle-container">
+          <div class="circle"></div>
+          <div id="timer">25:00</div>
+        </div>
+        <div class="controls">
+          <button id="start">Iniciar</button>
+          <button id="pause" class="hidden">Pausar</button>
+          <button id="stop" class="hidden">Parar</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="message" class="hidden">
+      <p id="message-text"></p>
+      <button id="close-message">&times;</button>
+    </div>
+
+    <script src="script/timer.js"></script>
+    <script>
+      // Função para abrir/fechar o menu lateral
+      function toggleMenu() {
+        const sideMenu = document.getElementById('side-menu');
+        sideMenu.classList.toggle('hidden');
+      }
+
+      // Função para ajustar os tempos
+      function adjustTime(type, change) {
+        const workTimeElement = document.getElementById('work-time');
+        const restTimeElement = document.getElementById('rest-time');
+
+        let workTime = parseInt(workTimeElement.textContent);
+        let restTime = parseInt(restTimeElement.textContent);
+
+        if (type === 'work') {
+          workTime += change;
+          if (workTime < 1) workTime = 1;
+          if (workTime > 60) workTime = 60;
+          workTimeElement.textContent = workTime;
+        } else if (type === 'rest') {
+          restTime += change;
+          if (restTime < 1) restTime = 1;
+          if (restTime > 30) restTime = 30;
+          restTimeElement.textContent = restTime;
+        }
+
+        // Atualiza o timer se estiver em pausa
+        if (isPaused && isWorkTime) {
+          timeLeft = workTime * 60;
+          updateTimer();
+        }
+      }
+    </script>
   </body>
 </html>
