@@ -4,11 +4,11 @@
 :root {
   --font1: "Pacifico", cursive;
   --font2: "Russo One", serif;
-  --color-primary: #060e26; /* Azul muito escuro */
-  --color-secondary: #404153; /* Azul escuro */
-  --color-accent: #8930d1; /* Azul médio */
-  --color-light: #d986ff; /* Azul claro */
-  --color-extra-light: #8c00dd; /* Azul muito claro */
+  --color-primary: #0D0D0D; 
+  --color-secondary: #010440; 
+  --color-accent: #010326; 
+  --color-light: #575859 ;
+  --color-extra-light: #D9D9D9; 
 }
 * {
 
@@ -23,12 +23,12 @@ html{
 body {
   height: 115vh;
   width: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
   font-family: var(--font2);
-background-color: var(--color-primary);
+background-color: white;
 }
 header {
-  background-color: white;
+  background-color:var(--color-extra-light);
   display: flex;
   flex-direction: row;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.127);
@@ -38,7 +38,7 @@ header {
 h1 {
   margin: auto;
   padding: 10px;
-  color: var(--color-primary);
+  color: var(--color-accent);
   .material-symbols-outlined {
     font-size: 1em;
     filter: drop-shadow(1px 1px 1px var(--co2));
@@ -53,18 +53,18 @@ h1 {
   }
 }
 .Symbols {
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 .container-timer {
-  background-color: var(--color-secondary);
+  background-color: var(--color-light);
   max-width: 800px;
   width: 90%;
   height: 70%;
   margin: 25px auto;
   padding: 20px;
   border-radius: 10px;
-  box-shadow:inset 2px 2px 8px var(--color-primary);
+  box-shadow:inset 2px 2px 8px var(--color-accent);
 }
 
 /* Container do Timer */
@@ -80,7 +80,7 @@ h1 {
   width: 350px; /* Tamanho do contêiner */
   height: 350px;
   margin: 0 auto; /* Centraliza o contêiner */
-filter: drop-shadow(2px 2px 6px var(--color-primary));
+filter: drop-shadow(2px 2px 6px var(--color-accent));
 }
 
 /* Círculo animado */
@@ -89,9 +89,9 @@ filter: drop-shadow(2px 2px 6px var(--color-primary));
   height: 100%;
   border-radius: 50%; /* Formato circular */
   background: conic-gradient(
-    var(--color-accent),
-    /* Cor inicial do gradiente */ rgba(22, 62, 115, 0.1) 90%,
-    /* Tom quase transparente no meio */ var(--color-accent)
+    #010326,
+    /* Cor inicial do gradiente */ #0d0d0d52 90%,
+    /* Tom quase transparente no meio */ #d9d9d900
       /* Cor final do gradiente */
   );
   position: absolute;
@@ -116,7 +116,7 @@ filter: drop-shadow(2px 2px 6px var(--color-primary));
 #timer {
   font-size: 3.5rem;
   font-family: var(--font2);
-  color: var(--color-primary); /* Cor do texto do timer */
+  color: var(--color-accent); /* Cor do texto do timer */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -166,7 +166,7 @@ filter: drop-shadow(2px 2px 6px var(--color-primary));
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--color-accent);
+  background-color: var(--color-primary);
   color: #fff;
   padding: 20px;
   border-radius: 5px;
@@ -201,13 +201,13 @@ filter: drop-shadow(2px 2px 6px var(--color-primary));
   left: 0;
   width: 250px;
   height: 100vh;
-  background-color: #060e26;
+  background-color: #ffffff;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.281);
   transform: translateX(-100%);
   transition: transform 0.3s ease;
   z-index: 1000;
   padding: 20px;
-  color: var(--color-light);
+  color: var(--color-primary);
 }
 
 .side-menu.hidden {
@@ -224,7 +224,7 @@ filter: drop-shadow(2px 2px 6px var(--color-primary));
   right: 10px;
   background: none;
   border: none;
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -236,7 +236,7 @@ filter: drop-shadow(2px 2px 6px var(--color-primary));
 .side-menu h2 {
   font-size: 1.5rem;
   margin-bottom: 20px;
-  color: var(--color-extra-light);
+  color: var(--color-primary);
 }
 
 .time-control {
@@ -256,7 +256,7 @@ filter: drop-shadow(2px 2px 6px var(--color-primary));
 
 .control-buttons button {
   background-color: var(--color-accent);
-  color: var(--color-light);
+  color: #fff;
   border: none;
   width: 30px;
   height: 30px;
@@ -267,10 +267,10 @@ filter: drop-shadow(2px 2px 6px var(--color-primary));
 }
 
 .control-buttons button:hover {
-  background-color: var(--color-extra-light);
+  background-color: var(--color-accent);
 }
 
 .control-buttons span {
   font-size: 1.2rem;
-  color: var(--color-light);
+  color: var(--color-accent);
 }
